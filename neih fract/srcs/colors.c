@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   colors.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abenaiss <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: abenaiss <abenaiss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/22 20:55:17 by abenaiss          #+#    #+#             */
-/*   Updated: 2019/06/29 16:30:43 by abenaiss         ###   ########.fr       */
+/*   Updated: 2019/06/30 18:47:13 by abenaiss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,37 +43,38 @@ int		ft_color_re(t_fract *fract, double t)
 	return (ft_int_rgb(r, g, b));
 }
 
-int		ft_color(t_fract *fract, float it)
+int		ft_color(t_fract *fract)
 {
 	double t;
 	int r;
 	int g;
 	int b;
 
-	t = (double)it / (double)fract->max_it;
+	t = fract->it/fract->max_it;
 	if (fract->rgb == 1)
 	{
 		r = (int)(15 * (1 - t) * (1 - t) * t * t * 255);
 		b = (int)(8 * (1 - t) * t * t * t * 255);
 		g = (int)(9 * (1 - t) * (1 - t) * (1 - t) * t * 255);
-		return (ft_int_rgb(r, g, b)); 
+			return (ft_int_rgb(r, g, b)); 
 	}
 	else
 		r = ft_color_re(fract, t);
-    return (r);
+	return (r);
 }
 
 void	ft_print(t_fract *fract)
 {
 	float mod;
 	float mu;
-
-	mod = (fract->zisqr + fract->zrsqr) * (fract->zisqr 
-    + fract->zrsqr);
-	mu = fract->it - log(log(mod)) + 4;
-	fract->it = mu;
+	if(fract->smooth)
+	{
+		mod = (fract->zisqr + fract->zrsqr) * (fract->zisqr 
+		+ fract->zrsqr);
+		fract->it = fract->it - log(log(mod)) + 4;		
+	}
 	if (fract->it !=  fract->max_it && fract->row >= 0 && fract->row
         <= WIN_HEIGHT && fract->col >= 0 && fract->col <= WIN_WIDTH)
 		fract->mlx.img.data[fract->row * WIN_WIDTH + fract->col] 
-            = ft_color(fract, mu);
+            = ft_color(fract);
 }
