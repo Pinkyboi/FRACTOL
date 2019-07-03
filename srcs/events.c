@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   events.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: magoumi <magoumi@student.42.fr>            +#+  +:+       +#+        */
+/*   By: abenaiss <abenaiss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/21 18:26:33 by abenaiss          #+#    #+#             */
-/*   Updated: 2019/07/01 04:56:29 by magoumi          ###   ########.fr       */
+/*   Updated: 2019/07/02 22:48:20 by aihya            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ void	ft_clear_mlx(t_mlx *mlx)
 int		ft_exit(t_fract *fract)
 {
 	(void)fract;
+	ft_clear_mlx(&fract->mlx);
+	mlx_destroy_window(fract->mlx.mlx_ptr, fract->mlx.win);
 	exit(0);
 }
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   colors.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: magoumi <magoumi@student.42.fr>            +#+  +:+       +#+        */
+/*   By: abenaiss <abenaiss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/22 20:55:17 by abenaiss          #+#    #+#             */
-/*   Updated: 2019/07/01 05:01:58 by magoumi          ###   ########.fr       */
+/*   Updated: 2019/07/03 01:45:45 by abenaiss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,6 @@ int		ft_color(t_fract *fract)
 void	ft_print(t_fract *fract)
 {
 	float mod;
-	float mu;
 
 	if (fract->smooth)
 	{

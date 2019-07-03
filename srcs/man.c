@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   man.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: magoumi <magoumi@student.42.fr>            +#+  +:+       +#+        */
+/*   By: abenaiss <abenaiss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/30 17:28:37 by abenaiss          #+#    #+#             */
-/*   Updated: 2019/07/01 05:14:34 by magoumi          ###   ########.fr       */
+/*   Updated: 2019/07/02 22:48:58 by aihya            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,13 @@ void	ft_info_win2(t_fract fract2)
 	" -------------------------------------------------");
 }
 
+int		ft_exit_man(t_fract *fract)
+{
+	(void)fract;
+	mlx_destroy_window(fract->mlx.mlx_ptr, fract->mlx.win);
+	return (0);
+}
+
 void	ft_info_win1(void)
 {
 	t_fract fract2;
@@ -46,6 +53,7 @@ void	ft_info_win1(void)
 	"|RESTORE THE DEFAULT FRACTAL :(SPACE)          |");
 	mlx_string_put(fract2.mlx.mlx_ptr, fract2.mlx.win, 10, 140, 0xFFFFFF,
 	"|CHANGE COLORS MANUALLY :(R/G/B)               |");
+	mlx_hook(fract2.mlx.win, 17, 1, (*ft_exit_man), &fract2);
 	ft_info_win2(fract2);
 	mlx_loop(fract2.mlx.mlx_ptr);
 }

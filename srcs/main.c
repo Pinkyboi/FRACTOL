@@ -6,7 +6,7 @@
 /*   By: abenaiss <abenaiss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/14 15:58:33 by abenaiss          #+#    #+#             */
-/*   Updated: 2019/07/01 00:32:34 by abenaiss         ###   ########.fr       */
+/*   Updated: 2019/07/02 14:18:57 by abenaiss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ int		main(int argc, char **argv)
 	fract.choose = 0;
 	if (argc == 2)
 		ft_choose(argv[1], &fract);
-	if (!fract.choose || argc == 1)
+	if (!fract.choose)
 	{
 		ft_putendl("╔════════════════════════════════════════════════════╗");
 		ft_putendl("║                       Fact'ol                      ║");
