@@ -21,15 +21,15 @@ $> ./fractol
 ## Bonuses
 ### 1-The interface and usages :
 
--A User-Friendly interface that give some additonal infomations and fonctionalities.
+-A User-Friendly interface that gives some additonal infomations and fonctionalities.
 
 ![alt tag](https://user-images.githubusercontent.com/47903494/60783332-0f698d80-a142-11e9-92cf-81a1ab3310d1.png)
 1. The name of the fractal and his number on the list.
 2. The actual number of iterations.
 3. Arrows buttons to switch between fractals **(clickable)**.
-4. A little indicator indicator of your position in the list.
+4. A little indicator of your position in the list.
 5. Indicator to know if your fractal variables are locked or not (for julia-like fractals).
-6. Change cr with the little palette on the side **(clickable)**.
+6. Change colors with the little palette on the side **(clickable)**.
 
 ![alt tag](https://user-images.githubusercontent.com/47903494/60784285-43df4880-a146-11e9-9c58-150299f513fd.png)
 
