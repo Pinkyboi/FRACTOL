@@ -37,7 +37,7 @@ $> ./fractol
 
 ![alt tag](https://user-images.githubusercontent.com/47903494/60784470-f57e7980-a146-11e9-8156-970a075a6473.png)
 
-8. There is a little more: click on the **?** button tu have more information about all Bonuses.
+8. There is a little more: click on the **?** button to have more information about all Bonuses.
 
 ![alt tag](https://user-images.githubusercontent.com/47903494/60784823-62deda00-a148-11e9-8daa-9cad6c71cd09.png)
 
@@ -49,4 +49,4 @@ $> ./fractol
 #### Special one :
 ![alt tag](https://user-images.githubusercontent.com/47903494/60785738-ecdc7200-a14b-11e9-86cb-27d1dd5e3028.png)
 
-This fractal is using the general solution of Zn so its is really slow, it's just a demonstration of how each power of the multibrot should look like.
+This fractal is using the general solution of Zn so its is really slow, it's just a demonstration of how each power of the Multibrot should look like.
