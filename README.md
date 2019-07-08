@@ -41,7 +41,7 @@ $> ./fractol
 
 ![alt tag](https://user-images.githubusercontent.com/47903494/60784823-62deda00-a148-11e9-8daa-9cad6c71cd09.png)
 
-### 1-The Fractals :
+### 2-The Fractals :
 #### The Classics :
 ![alt tag](https://user-images.githubusercontent.com/47903494/60785075-7b032900-a149-11e9-9bb3-650171a16ee7.png)
 #### More Fractals :
