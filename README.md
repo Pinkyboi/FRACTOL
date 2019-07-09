@@ -26,7 +26,7 @@ $> ./fractol
 ![alt tag](https://user-images.githubusercontent.com/47903494/60783332-0f698d80-a142-11e9-92cf-81a1ab3310d1.png)
 1. The name of the fractal and his number on the list.
 2. The actual number of iterations.
-3. Arrows buttons to switch between fractals **(clickable)**.
+3. Arrow buttons to switch between fractals **(clickable)**.
 4. A little indicator of your position in the list.
 5. Indicator to know if your fractal variables are locked or not (for julia-like fractals).
 6. Change colors with the little palette on the side **(clickable)**.
@@ -49,4 +49,4 @@ $> ./fractol
 #### Special one :
 ![alt tag](https://user-images.githubusercontent.com/47903494/60785738-ecdc7200-a14b-11e9-86cb-27d1dd5e3028.png)
 
-This fractal is using the general solution of Zn so its is really slow, it's just a demonstration of how each power of the Multibrot should look like.
+This fractal is using the general solution of Zn so it is really slow, it's just a demonstration of how each power of the Multibrot should look like.
