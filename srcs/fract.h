@@ -6,7 +6,7 @@
 /*   By: abenaiss <abenaiss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/14 15:58:21 by abenaiss          #+#    #+#             */
-/*   Updated: 2019/07/24 09:38:23 by abenaiss         ###   ########.fr       */
+/*   Updated: 2019/07/24 09:48:29 by abenaiss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@
 # define WIN_HEIGHT 700
 # define LEFT_CLICK 2
 # define RIGHT_CLICK 1
-# define NUM_THREAD 6
+# define NUM_THREAD 4
 # define I 34
 # define ESC 53
 # define PLUS 69
