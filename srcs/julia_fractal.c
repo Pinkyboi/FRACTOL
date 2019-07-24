@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   julia_fractal.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: magoumi <magoumi@student.42.fr>            +#+  +:+       +#+        */
+/*   By: abenaiss <abenaiss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/22 21:00:11 by abenaiss          #+#    #+#             */
-/*   Updated: 2019/07/01 04:50:11 by magoumi          ###   ########.fr       */
+/*   Updated: 2019/07/24 09:01:45 by abenaiss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,15 @@ void	ft_fract_prep(t_fract *fract)
 	fract->zisqr = fract->z_i * fract->z_i;
 }
 
-void	ft_julia(t_fract *fract)
+void	*ft_julia(void *data)
 {
-	ft_strcpy(fract->fractal, "Julia");
-	fract->row = -1;
+	t_fract	*fract;
+
+	fract = data;
+	fract->row = fract->w - 1;
 	while (++fract->row < fract->win_h)
 	{
-		fract->col = -1;
+		fract->col = fract->w - 1;
 		while (++fract->col < fract->win_w)
 		{
 			ft_fract_prep(fract);
@@ -47,16 +49,19 @@ void	ft_julia(t_fract *fract)
 			ft_print(fract);
 		}
 	}
+	return (NULL);
 }
 
-void	ft_julia_cross(t_fract *fract)
+void	*ft_julia_cross(void *data)
 {
-	ft_strcpy(fract->fractal, "Julia Cross");
-	fract->row = 0;
-	while (fract->row < fract->win_h)
+	t_fract	*fract;
+
+	fract = data;
+	fract->row = -1;
+	while (++fract->row < fract->win_h)
 	{
-		fract->col = 0;
-		while (fract->col < fract->win_w)
+		fract->col = fract->w - 1;
+		while (++fract->col < fract->win_w)
 		{
 			ft_fract_prep(fract);
 			while (fract->zrsqr + fract->zisqr < 4 && fract->it < fract->max_it)
@@ -69,20 +74,21 @@ void	ft_julia_cross(t_fract *fract)
 				fract->it++;
 			}
 			ft_print(fract);
-			fract->col++;
 		}
-		fract->row++;
 	}
+	return (NULL);
 }
 
-void	ft_burning_julia(t_fract *fract)
+void	*ft_burning_julia(void *data)
 {
-	ft_strcpy(fract->fractal, "Burning Julia");
-	fract->row = 0;
-	while (fract->row < fract->win_h)
+	t_fract *fract;
+
+	fract = data;
+	fract->row = -1;
+	while (++fract->row < fract->win_h)
 	{
-		fract->col = 0;
-		while (fract->col < fract->win_w)
+		fract->col = fract->w - 1;
+		while (++fract->col < fract->win_w)
 		{
 			ft_fract_prep(fract);
 			while (fract->zrsqr + fract->zisqr < 4 && fract->it < fract->max_it)
@@ -95,8 +101,7 @@ void	ft_burning_julia(t_fract *fract)
 				fract->it++;
 			}
 			ft_print(fract);
-			fract->col++;
 		}
-		fract->row++;
 	}
+	return (NULL);
 }

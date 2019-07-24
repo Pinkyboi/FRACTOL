@@ -3,23 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   fix_fractal.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: magoumi <magoumi@student.42.fr>            +#+  +:+       +#+        */
+/*   By: abenaiss <abenaiss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/30 18:37:10 by abenaiss          #+#    #+#             */
-/*   Updated: 2019/07/01 04:40:24 by magoumi          ###   ########.fr       */
+/*   Updated: 2019/07/24 09:06:50 by abenaiss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fract.h"
 
-void	ft_mandelbrot(t_fract *fract)
+void	*ft_mandelbrot(void *data)
 {
-	ft_strcpy(fract->fractal, "Mandelbrot");
-	fract->row = 0;
-	while (fract->row < fract->win_h)
+	t_fract *fract;
+
+	fract = data;
+	fract->row = -1;
+	while (++fract->row < fract->win_h)
 	{
-		fract->col = 0;
-		while (fract->col < fract->win_w)
+		fract->col = fract->w - 1;
+		while (++fract->col < fract->maxw)
 		{
 			ft_fract_prep(fract);
 			while (fract->zrsqr + fract->zisqr < 4 && fract->it < fract->max_it)
@@ -32,20 +34,21 @@ void	ft_mandelbrot(t_fract *fract)
 				fract->it++;
 			}
 			ft_print(fract);
-			fract->col++;
 		}
-		fract->row++;
 	}
+	return (NULL);
 }
 
-void	ft_tricorn(t_fract *fract)
+void	*ft_tricorn(void *data)
 {
-	ft_strcpy(fract->fractal, "Tricorn");
-	fract->row = 0;
-	while (fract->row < fract->win_h)
+	t_fract		*fract;
+
+	fract = data;
+	fract->row = -1;
+	while (++fract->row < fract->win_h)
 	{
-		fract->col = 0;
-		while (fract->col < fract->win_w)
+		fract->col = fract->w - 1;
+		while (++fract->col < fract->maxw)
 		{
 			ft_fract_prep(fract);
 			while (fract->zrsqr + fract->zisqr < 4 && fract->it < fract->max_it)
@@ -58,20 +61,21 @@ void	ft_tricorn(t_fract *fract)
 				fract->it++;
 			}
 			ft_print(fract);
-			fract->col++;
 		}
-		fract->row++;
 	}
+	return (NULL);
 }
 
-void	ft_burning_ship(t_fract *fract)
+void	*ft_burning_ship(void *data)
 {
-	ft_strcpy(fract->fractal, "Burning Ship");
-	fract->row = 0;
-	while (fract->row < fract->win_h)
+	t_fract *fract;
+
+	fract = data;
+	fract->row = -1;
+	while (++fract->row < fract->win_h)
 	{
-		fract->col = 0;
-		while (fract->col < fract->win_w)
+		fract->col = fract->w - 1;
+		while (++fract->col < fract->maxw)
 		{
 			ft_fract_prep(fract);
 			while (fract->zrsqr + fract->zisqr < 4 && fract->it < fract->max_it)
@@ -84,36 +88,36 @@ void	ft_burning_ship(t_fract *fract)
 				fract->it++;
 			}
 			ft_print(fract);
-			fract->col++;
 		}
-		fract->row++;
 	}
+	return (NULL);
 }
 
-void	ft_multibrot(t_fract *fract)
+void	*ft_multibrot(void *data)
 {
-	double	t;
+	t_fract *fract;
 
-	ft_strcpy(fract->fractal, "Multibrot");
+	fract = data;
 	fract->row = -1;
 	while (++fract->row < fract->win_h)
 	{
-		fract->col = -1;
-		while (++fract->col < fract->win_w)
+		fract->col = fract->w - 1;
+		while (++fract->col < fract->maxw)
 		{
 			ft_fract_prep(fract);
 			while (fract->zrsqr + fract->zisqr < 4 && fract->it < fract->max_it)
 			{
-				t = fract->z_r;
+				fract->stockz = fract->z_r;
 				fract->zrsqr = fract->z_r * fract->z_r;
 				fract->zisqr = fract->z_i * fract->z_i;
 				fract->z_r = pow((fract->zrsqr + fract->zisqr), (fract->n / 2))
 				* cos(fract->n * atan2(fract->z_i, fract->z_r)) + fract->c_r;
 				fract->z_i = pow((fract->zrsqr + fract->zisqr), (fract->n / 2))
-				* sin(fract->n * atan2(fract->z_i, t)) + fract->c_i;
+				* sin(fract->n * atan2(fract->z_i, fract->stockz)) + fract->c_i;
 				fract->it++;
 			}
 			ft_print(fract);
 		}
 	}
+	return (NULL);
 }

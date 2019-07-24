@@ -6,7 +6,7 @@
 /*   By: abenaiss <abenaiss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/30 17:19:32 by abenaiss          #+#    #+#             */
-/*   Updated: 2019/07/02 19:39:52 by abenaiss         ###   ########.fr       */
+/*   Updated: 2019/07/24 09:06:20 by abenaiss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,9 @@ void	ft_zoom(t_fract *fract)
 
 void	ft_pos_zoom(t_fract *fract, double x, double y)
 {
-	fract->zoom.mousere = (double)x / (fract->win_w / (fract->zoom.rmax -
-	fract->zoom.rmin)) + fract->zoom.rmin;
-	fract->zoom.mouseim = (double)y / (fract->win_h / (fract->zoom.imax -
-	fract->zoom.imin)) + fract->zoom.imin;
+	fract->zoom.mousere = ((double)x + fract->movex) / (fract->win_w /
+	(fract->zoom.rmax - fract->zoom.rmin)) + fract->zoom.rmin;
+	fract->zoom.mouseim = ((double)y + fract->movey) / (fract->win_h /
+	(fract->zoom.imax - fract->zoom.imin)) + fract->zoom.imin;
 	ft_zoom(fract);
 }
