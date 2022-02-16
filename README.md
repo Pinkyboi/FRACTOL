@@ -1,6 +1,5 @@
 # Fract'ol
-## Description
--Fract'ol is a 42 Project aimed at exploring fractals mathematical sets that exhibit a repeating pattern displayed at every scale.
+
 ## Usage
 -Compile using the command `make` then an executable named **fractol** will appear execute `./fractol [fractal name]` to run the program:
 
